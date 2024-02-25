@@ -11,17 +11,22 @@ export const product = {
     {
       color: "Black",
       colorCode: "#000000",
-      image: "https://m.media-amazon.com/images/I/61g+McQpg7L._AC_SX679_.jpg",
+      image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_night.jpg",
     },
     {
       color: "Blue",
       colorCode: " #0000FF",
-      image: "https://m.media-amazon.com/images/I/713Om9vCHUL._AC_SX679_.jpg",
+      image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_blue.jpg",
     },
     {
       color: "Red",
       colorCode: "#FF0000",
-      image: "https://m.media-amazon.com/images/I/61thdjmfHcL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+      image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_red.jpg",
+    },
+    {
+      color: "Green",
+      colorCode: "#244f3e",
+      image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_green.jpg",
     },
   ],
   reviews: [
