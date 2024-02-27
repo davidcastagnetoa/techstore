@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${titillium_Web.className} text-slate-700`}>
-        <Toaster />
+        <Toaster toastOptions={{ style: { background: "rgb(51 65 85)", color: "#fff" } }} />
         <CartProvider>
           <div className="flex flex-col min-h-screen">
             <NavBar />
