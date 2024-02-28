@@ -36,8 +36,7 @@ const Button: React.FC<ButtonProps> = ({ label, disabled, outlined, small, custo
       ${custom ? custom : ""}
       `}
     >
-      {Icon && <Icon size={24} />} {label} {custom && "Custom"} {outlined && "Outlined"} {small && "Small"}{" "}
-      {disabled && "Disabled"}
+      {Icon && <Icon size={24} />} {label}
     </button>
   );
 };

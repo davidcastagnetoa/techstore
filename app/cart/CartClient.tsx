@@ -4,6 +4,7 @@ import { useCart } from "@/hooks/useCart";
 import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
 import Heading from "../components/Heading";
+import Button from "../components/Button";
 
 const CartClient = () => {
   const { cartProducts } = useCart();
@@ -30,6 +31,24 @@ const CartClient = () => {
         <div className="col-span-2 justify-self-center">PRICE</div>
         <div className="col-span-2 justify-self-center">QUANTITY</div>
         <div className="col-span-2 justify-self-end">TOTAL</div>
+      </div>
+      <div>
+        {cartProducts &&
+          cartProducts.map((item) => {
+            return <div key={item.id}>{item.name}</div>;
+          })}
+      </div>
+      <div className="border-t-[1.5px] border-slate-200 py-4 flex justify-between gap-4">
+        <div className="w-[90px] ">
+          <Button label="Clear Cart" onClick={() => {}} small outlined />
+        </div>
+        <div className="text-sm flex flex-col gap-1 items-center">
+          <div className="flex justify-center w-full text-base font-semibold">
+            <span>Subtotal</span>
+            <span>$1000</span>
+          </div>
+          <p>Taxes and shipping calculate at checkout</p>
+        </div>
       </div>
     </div>
   );
