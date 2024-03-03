@@ -48,7 +48,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     quantity: 1,
     price: product.price,
   });
-
   const router = useRouter();
 
   console.log(cartProducts);
@@ -58,7 +57,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
     if (cartProducts) {
       const existingIndex = cartProducts.findIndex((item) => item.id === product.id);
-      if (existingIndex !== -1) {
+
+      if (existingIndex > -1) {
         setIsProductInCart(true);
       }
     }
@@ -126,7 +126,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           <>
             <p className="mb-2 flex text-slate-500 items-center gap-1">
               <MdCheckCircle className="text-teal-400" size={20} />
-              <span>Product added to cart</span>
+              <span>Product added to cart.</span>
             </p>
             <div className="max-w-[300px]">
               <Button

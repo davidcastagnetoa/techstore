@@ -91,16 +91,16 @@ export const products = [
         colorCode: "#fe8ac7",
         image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_pink.jpg",
       },
-      {
-        color: "White",
-        colorCode: "#c4c4c4",
-        image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_white_.jpg",
-      },
-      {
-        color: "Green",
-        colorCode: "#244f3e",
-        image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_green.jpg",
-      },
+      // {
+      //   color: "White",
+      //   colorCode: "#c4c4c4",
+      //   image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_white_.jpg",
+      // },
+      // {
+      //   color: "Green",
+      //   colorCode: "#244f3e",
+      //   image: "https://techstore-next.s3.eu-north-1.amazonaws.com/s-l1600_green.jpg",
+      // },
     ],
     reviews: [
       {
