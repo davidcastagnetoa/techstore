@@ -28,7 +28,7 @@ const Input: React.FC<InputProps> = ({ id, label, type, disabled, required, regi
         p-4 
         pt-6 
         outline-none 
-        by-white 
+        bg-white 
         font-light 
         border-2 
         rounded-md 

@@ -36,7 +36,7 @@ export const CartContextProvider = (props: Props) => {
   useEffect(() => {
     const getTotals = () => {
       if (cartProducts) {
-        const { total, qty } = cartProducts?.reduce(
+        const { total, qty } = cartProducts.reduce(
           (acc, item) => {
             const itemTotal = item.price * item.quantity;
             acc.total += itemTotal;
@@ -64,11 +64,10 @@ export const CartContextProvider = (props: Props) => {
       } else {
         updatedCart = [product];
       }
-      toast.success("Product added to cart");
-      console.log("Product addToCart: ", updatedCart);
       localStorage.setItem("eShopCartItems", JSON.stringify(updatedCart));
       return updatedCart;
     });
+    toast.success("Product addet to cart");
   }, []);
 
   const handleRemoveProductFromCart = useCallback(

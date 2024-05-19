@@ -36,6 +36,7 @@ const Horizontal = () => {
 };
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
+  const { cartTotalQty } = useCart();
   const { handleAddProductCart, cartProducts } = useCart();
   const [isProductInCart, setIsProductInCart] = useState(false);
   const [cartProduct, setCartProduct] = useState<CartProductType>({
@@ -51,21 +52,19 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const router = useRouter();
 
   console.log(cartProducts);
+  console.log("Cart Total Quantity:", cartTotalQty);
 
   useEffect(() => {
     setIsProductInCart(false);
 
     if (cartProducts) {
-      const existingIndex = cartProducts.findIndex((item) => item.id === product.id);
+      const existingIndex = cartProducts.findIndex((item) => item.id == product.id);
 
       if (existingIndex > -1) {
         setIsProductInCart(true);
       }
     }
   }, [cartProducts]);
-
-  const productRating =
-    product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) / product.reviews.length;
 
   const handleColorSelect = useCallback(
     (value: SelectedImgType) => {
@@ -79,23 +78,35 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     [cartProduct.selectedImg]
   );
 
-  const handleQtyIncrease = useCallback(() => {
-    if (cartProduct.quantity === 99) {
-      return;
-    }
-    setCartProduct((prev) => {
-      return { ...prev, quantity: prev.quantity + 1 };
+  const handleQtyDecrease2 = useCallback(() => {
+    setCartProduct((prev: any) => {
+      if (prev.quantity === 1) {
+        return { ...prev };
+      }
+      return { ...prev, quantity: --prev.quantity };
     });
   }, [cartProduct]);
 
   const handleQtyDecrease = useCallback(() => {
-    if (cartProduct.quantity === 1) {
-      return;
-    }
     setCartProduct((prev) => {
+      if (prev.quantity === 1) {
+        return { ...prev };
+      }
       return { ...prev, quantity: prev.quantity - 1 };
     });
-  }, [cartProduct]);
+  }, []);
+
+  const handleQtyIncrease = useCallback(() => {
+    setCartProduct((prev) => {
+      if (prev.quantity === 99) {
+        return { ...prev };
+      }
+      return { ...prev, quantity: prev.quantity + 1 };
+    });
+  }, []);
+
+  const productRating =
+    product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) / product.reviews.length;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -148,12 +159,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             />
             <Horizontal />
             <div className="max-w-[300px]">
-              <Button
-                label="Add to cart"
-                onClick={() => {
-                  handleAddProductCart(cartProduct);
-                }}
-              />
+              <Button label={"Add to cart"} onClick={() => handleAddProductCart(cartProduct)} />
             </div>
           </>
         )}

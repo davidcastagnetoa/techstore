@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-[tutorial](https://youtu.be/g88HHFjuMm4?si=WQzLtWtGUqNsbp_r&t=17885)
+[tutorial](https://youtu.be/g88HHFjuMm4?si=sWrIM2W4_Ep8SQf1&t=20178)
+[repo](https://github.com/deribewsoftware/e_shop_with_nextJs)
+[repo2](https://github.com/EvansRobbie/e-shop)
 
 ## Getting Started
 
